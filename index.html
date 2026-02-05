@@ -1,158 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skyrim ModNotes UI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Favicon -->
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skyrim ModNotes UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link
       rel="icon"
       href="./favicon - skyrim/favicon-32x32.png"
       type="image/x-icon"
     />
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/style.css">
-  <style>
-    /* Добавляем кастомный скроллбар для эстетики */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* Добавляем кастомный скроллбар для эстетики */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
 
-    ::-webkit-scrollbar-thumb {
-      background: #475569;
-      border-radius: 4px;
-    }
+      ::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 4px;
+      }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #64748b;
-    }
-  </style>
-</head>
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+    </style>
+  </head>
 
-<body
-  class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-slate-200 font-sans flex flex-col items-center justify-center p-4 sm:p-8">
+  <body
+    class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-slate-200 font-sans flex flex-col items-center justify-center p-4 sm:p-8"
+  >
+    <h1
+      class="text-3xl md:text-4xl font-light tracking-widest mb-8 text-center opacity-90"
+    >
+      Skyrim ModNotes
+    </h1>
 
-  <h1 class="text-3xl md:text-4xl font-light tracking-widest mb-8 text-center opacity-90">
-    Skyrim ModNotes
-  </h1>
+    <main
+      class="w-full max-w-6xl h-[85vh] max-h-[800px] border-2 border-slate-500 rounded-[2.5rem] bg-slate-800/40 backdrop-blur-md shadow-2xl p-6 md:p-8 flex flex-col md:flex-row gap-8 overflow-hidden relative"
+    >
+      <section class="flex flex-col w-full md:w-5/12 h-full relative z-10">
+        <h2 class="text-2xl font-medium mb-4 pl-2">Mod List</h2>
 
-  <main
-    class="w-full max-w-6xl h-[85vh] max-h-[800px] border-2 border-slate-500 rounded-[2.5rem] bg-slate-800/40 backdrop-blur-md shadow-2xl p-6 md:p-8 flex flex-col md:flex-row gap-8 overflow-hidden relative">
-
-    <section class="flex flex-col w-full md:w-5/12 h-full relative z-10">
-      <h2 class="text-2xl font-medium mb-4 pl-2">Mod List</h2>
-
-      <div class="flex-1 overflow-y-auto space-y-4 pr-2 pb-16">
-
-        <div
-          class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
-          <div class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center">
-            <div class="font-bold text-lg truncate">SkyUI</div>
-            <div class="text-blue-400 text-xs truncate underline mt-1">https://nexus...</div>
-            <div class="text-slate-400 text-xs mt-auto pt-2">Auth: SkyTeam</div>
+        <div class="flex-1 overflow-y-auto space-y-4 pr-2 pb-16">
+          <div
+            class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]"
+          >
+            <div
+              class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center"
+            >
+              <div class="font-bold text-lg truncate">SkyUI</div>
+              <div class="text-blue-400 text-xs truncate underline mt-1">
+                https://nexus...
+              </div>
+              <div class="text-slate-400 text-xs mt-auto pt-2">
+                Auth: SkyTeam
+              </div>
+            </div>
+            <div class="w-1/2 pl-1">
+              <div class="text-xs text-slate-400">Description</div>
+              <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod...
+              </p>
+            </div>
           </div>
-          <div class="w-1/2 pl-1">
-            <div class="text-xs text-slate-400">Description</div>
-            <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod...
-            </p>
+
+          <div
+            class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]"
+          >
+            <div
+              class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center"
+            >
+              <div class="font-bold text-lg truncate">Immersive Armor</div>
+              <div class="text-blue-400 text-xs truncate underline mt-1">
+                https://nexus...
+              </div>
+              <div class="text-slate-400 text-xs mt-auto pt-2">
+                Auth: Hothtrooper
+              </div>
+            </div>
+            <div class="w-1/2 pl-1">
+              <div class="text-xs text-slate-400">Description</div>
+              <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris...
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px] opacity-70"
+          >
+            <div
+              class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center"
+            >
+              <div class="font-bold text-lg truncate">ENB Series</div>
+              <div class="text-blue-400 text-xs truncate underline mt-1">
+                https://enbdev...
+              </div>
+              <div class="text-slate-400 text-xs mt-auto pt-2">Auth: Boris</div>
+            </div>
+            <div class="w-1/2 pl-1">
+              <div class="text-xs text-slate-400">Description</div>
+              <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
+                Duis aute irure dolor in reprehenderit in voluptate velit
+                esse...
+              </p>
+            </div>
           </div>
         </div>
 
         <div
-          class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
-          <div class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center">
-            <div class="font-bold text-lg truncate">Immersive Armor</div>
-            <div class="text-blue-400 text-xs truncate underline mt-1">https://nexus...</div>
-            <div class="text-slate-400 text-xs mt-auto pt-2">Auth: Hothtrooper</div>
-          </div>
-          <div class="w-1/2 pl-1">
-            <div class="text-xs text-slate-400">Description</div>
-            <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...
-            </p>
-          </div>
+          class="absolute bottom-0 left-0 w-full pt-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent flex items-center justify-between px-8 pb-2"
+        >
+          <!--  -->
+          <button
+            class="leftArrow text-3xl text-slate-400 hover:text-white transition-transform hover:-translate-x-1"
+          >
+            &larr;
+          </button>
+          <!-- Add Button -->
+          <button data-modal-button
+            class="w-12 h-12 border-2 border-slate-400 rounded-xl flex items-center justify-center text-3xl pb-1 hover:bg-slate-700 hover:border-white transition-all"
+          >
+            +
+          </button>
+
+          <button
+            class="rightArrow text-3xl text-slate-400 hover:text-white transition-transform hover:translate-x-1"
+          >
+            &rarr;
+          </button>
         </div>
+      </section>
+
+      <!-- Modal Section -->
+      <section class="modalSection">
+        <div id="modal-1" data-modal class="fade-block hidden">
+            <div class="modal-window">
+              <div class="card">
+                <div class="card-title">Lorem, ipsum dolor.</div>
+                <div class="card-body" id="card-items">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Integer posuere erat a ante.
+                  </p>
+                </div>
+                <button
+                  data-modal-close
+                  type="button"
+                  class="btn-close"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- Info Section -->
+      <section class="flex flex-col w-full md:w-7/12 h-full">
+        <h2 class="text-2xl font-medium mb-4 pl-2">Info About Mod</h2>
 
         <div
-          class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px] opacity-70">
-          <div class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center">
-            <div class="font-bold text-lg truncate">ENB Series</div>
-            <div class="text-blue-400 text-xs truncate underline mt-1">https://enbdev...</div>
-            <div class="text-slate-400 text-xs mt-auto pt-2">Auth: Boris</div>
-          </div>
-          <div class="w-1/2 pl-1">
-            <div class="text-xs text-slate-400">Description</div>
-            <p class="text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse...
+          class="flex-1 border-2 border-slate-500 rounded-[2rem] p-8 overflow-y-auto bg-slate-800/20"
+        >
+          <h3 class="text-4xl font-bold text-white mb-2">Immersive Armors</h3>
+
+          <a
+            href="#"
+            class="text-blue-400 underline text-lg block mb-8 hover:text-blue-300 transition-colors"
+          >
+            https://www.nexusmods.com/skyrim/mods/19733
+          </a>
+
+          <div class="space-y-4">
+            <h4
+              class="text-xl font-semibold text-slate-300 border-b border-slate-600 pb-2 inline-block"
+            >
+              Description
+            </h4>
+
+            <p class="text-slate-300 leading-relaxed text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <p class="text-slate-300 leading-relaxed text-lg">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+
+            <p class="text-slate-300 leading-relaxed text-lg">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam.
             </p>
           </div>
         </div>
-      </div>
+      </section>
+    </main>
 
-      
-      <div
-        class="absolute bottom-0 left-0 w-full pt-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent flex items-center justify-between px-8 pb-2">
-        <button class="text-3xl text-slate-400 hover:text-white transition-transform hover:-translate-x-1">
-          &larr;
-        </button>
-
-        <button
-          class="w-12 h-12 border-2 border-slate-400 rounded-xl flex items-center justify-center text-3xl pb-1 hover:bg-slate-700 hover:border-white transition-all">
-          +
-        </button>
-
-        <button class="text-3xl text-slate-400 hover:text-white transition-transform hover:translate-x-1">
-          &rarr;
-        </button>
-      </div>
-    </section>
-
-    <section class="flex flex-col w-full md:w-7/12 h-full">
-      <h2 class="text-2xl font-medium mb-4 pl-2">Info About Mod</h2>
-
-      <div class="flex-1 border-2 border-slate-500 rounded-[2rem] p-8 overflow-y-auto bg-slate-800/20">
-
-        <h3 class="text-4xl font-bold text-white mb-2">Immersive Armors</h3>
-
-        <a href="#" class="text-blue-400 underline text-lg block mb-8 hover:text-blue-300 transition-colors">
-          https://www.nexusmods.com/skyrim/mods/19733
-        </a>
-
-        <div class="space-y-4">
-          <h4 class="text-xl font-semibold text-slate-300 border-b border-slate-600 pb-2 inline-block">
-            Description
-          </h4>
-
-          <p class="text-slate-300 leading-relaxed text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </p>
-
-          <p class="text-slate-300 leading-relaxed text-lg">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-          </p>
-
-          <p class="text-slate-300 leading-relaxed text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="./js/app.js"></script>
-</body>
-
+    <script src="./js/app.js"></script>
+  </body>
 </html>

@@ -1,0 +1,72 @@
+.btn-store {
+    cursor: pointer;
+}
+
+.btn-close {
+    /* display: none; */
+    border: 3px solid transparent;
+    border-radius: 6px;
+    
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    color: inherit;
+    background-color: #f6f3f4;
+
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    background-color: #d3d0d171;
+    transition: ease .2s;
+    color: black;
+}
+
+
+.modal-window {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Visibility */
+
+.fade-block {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #653e92b0
+    /* background-color: var(--color-purple-500); */
+
+}
+
+/* Card */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+
+    padding: 15px;
+
+}
+
+.card-body {
+    padding: 2.25rem 0.5rem;
+}
+
+.card-title {
+    text-align: center;
+    
+}
