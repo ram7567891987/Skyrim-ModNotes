@@ -49,6 +49,7 @@
       <section class="flex flex-col w-full md:w-5/12 h-full relative z-10">
         <h2 class="text-2xl font-medium mb-4 pl-2">Mod List</h2>
 
+        <!-- Card Group -->
         <div class="flex-1 overflow-y-auto space-y-4 pr-2 pb-16">
           <div
             class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]"
@@ -121,7 +122,7 @@
         <div
           class="absolute bottom-0 left-0 w-full pt-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent flex items-center justify-between px-8 pb-2"
         >
-          <!--  -->
+          <!-- Left Arrow -->
           <button
             class="leftArrow text-3xl text-slate-400 hover:text-white transition-transform hover:-translate-x-1"
           >
@@ -133,7 +134,7 @@
           >
             +
           </button>
-
+          <!-- Right Arrow -->
           <button
             class="rightArrow text-3xl text-slate-400 hover:text-white transition-transform hover:translate-x-1"
           >
@@ -144,7 +145,7 @@
 
       <!-- Modal Section -->
       <section class="modalSection">
-        <div id="modal-1" data-modal class="fade-block hidden">
+        <div data-modal id="modal-1" class="fade-block hidden">
             <div class="modal-window">
               <div class="card">
                 <div class="card-title">Lorem, ipsum dolor.</div>
@@ -211,7 +212,8 @@
         </div>
       </section>
     </main>
-
+    
+    <!-- JS -->
     <script src="./js/app.js"></script>
   </body>
 </html>
