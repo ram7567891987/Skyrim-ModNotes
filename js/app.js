@@ -23,6 +23,10 @@ modal.addEventListener('click', () => {
 modal.querySelector('.modal-window').addEventListener('click', (event) => {
     event.stopPropagation();
 })
+
+// Work with TextArea
+
+
 // addBtn.addEventListener('click', () => {
 //     console.log('click!');
     
