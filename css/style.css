@@ -69,10 +69,28 @@
 }
 
 .card-body {
-    padding: 2.25rem 0.5rem;
+    padding: 2.25rem 10.5rem;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .card-title {
     text-align: center;
     
+}
+
+/* Inputs */
+.inputs {
+    background-color: #121822;
+    padding: 14px 9px 15px 13px;
+    border-radius: 13px;
+}
+
+.inputs-title {
+    padding-left: 12px;
+}
+
+.inputs::placeholder {
+
 }
