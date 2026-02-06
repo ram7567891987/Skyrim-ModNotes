@@ -13,6 +13,16 @@ addBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     modal.classList.add('hidden')
 })
+
+// Closing Modal Window after clicking on space
+modal.addEventListener('click', () => {
+    modal.classList.add('hidden')
+})
+
+// Fix Problem when Modal Window will close even after clicking on window 
+modal.querySelector('.modal-window').addEventListener('click', (event) => {
+    event.stopPropagation();
+})
 // addBtn.addEventListener('click', () => {
 //     console.log('click!');
     
