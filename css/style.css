@@ -84,34 +84,35 @@
 }
 
 /* Inputs */
+.inputs-title {
+    padding-left: 12px;
+}
+
 .inputs {
     background-color: #121822;
     padding: 14px 9px 15px 13px;
     border-radius: 13px;
 }
 
-.inputs-title {
-    padding-left: 12px;
-}
-
-
-
 .info {
     background-color: #121822;
     /* padding: 14px 9px 15px 13px; */
     border-radius: 13px;
-     
+
     padding-top: 13px;
     padding-left: 13px;
 
     min-height: 100px;
-    width: 500px;
+    width: 350px;
 
     overflow-y: scroll;
     resize: none;
     /* field-sizing: content; */
 }
 
+input:focus-visible, textarea:focus-visible {
+    outline: 2px solid rgb(100, 116, 139);
+}
 /* textarea {
     field-sizing: content;
 } */
