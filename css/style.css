@@ -1,20 +1,25 @@
+/* Buttons */
+.buttons-form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .btn-store {
     cursor: pointer;
 }
 
 .btn-close {
     /* display: none; */
-    border: 3px solid transparent;
+    border: 3px solid rgb(100, 116, 139);
     border-radius: 16px;
     
-    margin: 0 auto;
-    padding: 10px 20px;
+    /* margin: 0 auto; */
+    padding: 10px 45px;
 
     color: inherit;
-    background-color: #101620;
+    /* background-color: #101620; */
 
-    display: flex;
-    justify-content: center;
     cursor: pointer;
 }
 
@@ -24,6 +29,26 @@
     color: black;
 }
 
+.btn-save {
+    border: 3px solid transparent; 
+    border-radius: 16px;
+    
+    padding: 10px 45px;
+    
+    color: inherit;
+    background-color: #101620;
+
+    cursor: pointer;
+    
+}
+
+.btn-save:hover {
+    background-color: #d3d0d171;
+    transition: ease .2s;
+    color: black;
+}
+
+/* Modal */
 
 .modal-window {
     position: absolute;
@@ -49,6 +74,7 @@
 .hidden {
     display: none;
 }
+
 /* Card */
 
 .card {
@@ -85,14 +111,10 @@
 
 /* Inputs */
 
-/* .inputs-title {
-    padding: 10px 0 0 15px;
-} */
-
 .inputs {
     padding: 14px 9px 15px 13px;
     margin-bottom: 20px;
-    
+
     background-color: #121822;
     border-radius: 13px;
 }
@@ -116,14 +138,4 @@
 input:focus-visible, textarea:focus-visible {
     outline: 2px solid rgb(100, 116, 139);
 }
-/* textarea {
-    field-sizing: content;
-} */
 
-.info::placeholder {
-    /* padding-left: 10px; */
-}
-
-.info {
-
-}
