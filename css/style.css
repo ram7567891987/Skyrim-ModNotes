@@ -84,13 +84,16 @@
 }
 
 /* Inputs */
-.inputs-title {
-    padding-left: 12px;
-}
+
+/* .inputs-title {
+    padding: 10px 0 0 15px;
+} */
 
 .inputs {
-    background-color: #121822;
     padding: 14px 9px 15px 13px;
+    margin-bottom: 20px;
+    
+    background-color: #121822;
     border-radius: 13px;
 }
 
