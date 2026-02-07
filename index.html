@@ -147,21 +147,22 @@
 
       <!-- Modal Section -->
       <form class="modalSection">
-        <div data-modal id="modal-1" class="fade-block "> <!-- hidden -->
+        <div data-modal id="modal-1" class="fade-block hidden"> 
           <div class="modal-window">
             <div id="modForm" class="card">
               <div class="card-title">Mod Form</div>
               <div class="card-body" id="card-items">
                 <!-- Input Name -->
-                <input id="name" class="inputs name" type="text" placeholder="Name Mod" />
+                <input id="name" name="modName" class="inputs name" type="text" placeholder="Name Mod" />
                 <!-- Input Link -->
-                <input id="link" class="inputs link" type="text" placeholder="Paste Mod Link" />
+                <input id="link" name="modLink" class="inputs link" type="text" placeholder="Paste Mod Link" />
                 <!-- Input Author -->
-                <input id="auth" class="inputs auth" type="text" placeholder="Mod Author" />
+                <input id="auth" name="modAuth" class="inputs auth" type="text" placeholder="Mod Author" />
                 <!-- Input Description -->
                 <textarea
                   class="info"
                   id="info"
+                  name="modInfo"
                   placeholder="Some info about mod..."
                 ></textarea>
               </div>
@@ -170,7 +171,7 @@
                 <button data-modal-close type="button" class="btn-close">
                   Close
                 </button>
-                <button data-modal-save type="button" class="btn-save">
+                <button data-modal-save type="submit" class="btn-save">
                   Save
                 </button>
               <!-- </buttons> -->
