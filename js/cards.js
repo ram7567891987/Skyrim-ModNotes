@@ -1,13 +1,19 @@
+let allModsArray = [];
+
 /* Finding Elements and Creating  Variable */
 const btnSave = document.querySelector("[data-modal-save]");
 
 const modList = document.querySelector("#modList");
 const modForm = document.querySelector(".modalSection");
+const modID = document.querySelector('[data-id]')
 
 const nameInput = document.querySelector("#name");
 const linkInput = document.querySelector("#link");
 const authorInput = document.querySelector("#auth");
 const infoTextArea = document.querySelector("#info");
+
+
+
 
 modForm.addEventListener("submit", (event) => {
   event.preventDefault(); /* Delete some default options in browser */
@@ -21,14 +27,17 @@ modForm.addEventListener("submit", (event) => {
   const info = infoTextArea.value;
 
   const mods = {
+    id: allModsArray.length,
     modName: name,
     modLink: link,
     modAuth: auth,
     modInfo: info,
   };
 
+  allModsArray.push(mods);
+
   const modCardHTML = `
-    <div class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
+    <div data-id="${mods.id}" class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
         <div class="w-1/2 border-r-2 border-slate-600 pr-3 flex flex-col justify-center">
             <div class="font-bold text-lg truncate">${mods.modName}</div>
                 <div class="text-blue-400 text-xs truncate underline mt-1">
@@ -54,10 +63,20 @@ modForm.addEventListener("submit", (event) => {
   authorInput.value = "";
   infoTextArea.value = "";
 
-  const modal = document.querySelector('[data-modal]');
+//   const modal = document.querySelector('[data-modal]');
   modal.classList.add('hidden');
+//   console.log(mods.id);
 });
-// modForm.addEventListener('click', () => {
-//     console.log("click!!");
 
-// })
+
+/* 
+    Создать глобальный массив: Тебе нужно место, где будут храниться все объекты модов, которые ты создаешь. Назовем его, например, allModsArray. 
+
+    Присвоить ID при создании: Когда ты формируешь объект mods, добавь ему уникальное свойство (например, id: Date.now()). Это будет «личный номер» мода. 
+
+    Передать ID в HTML: В шаблоне карточки (modCardHTML) добавь к главному тегу атрибут data-id="${mods.id}". Теперь каждая карточка на экране «знает», какому объекту в массиве она соответствует.
+
+    Настроить «прослушку» кликов: Повесь обработчик событий click на весь список modList. Внутри используй метод event.target.closest('.mod-card'), чтобы понять, на какую именно карточку нажал пользователь. 🖱️
+
+    Найти данные и отобразить: Зная id нажатой карточки, найди нужный объект в allModsArray и вставь его данные (имя, описание, ссылку) в правую секцию. 
+*/
