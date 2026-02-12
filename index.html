@@ -49,9 +49,9 @@
       <section class="flex flex-col w-full md:w-5/12 h-full relative z-10">
         <h2 class="text-2xl font-medium mb-4 pl-2">Mod List</h2>
 
-        <!-- Card Group -->
+      <!-- Card Group -->
         <div id="modList" class="flex-1 overflow-y-auto space-y-4 pr-2 pb-16">
-
+        <!-- First Card -->
           <div data-id="0" class="group relative border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
             <div class="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
             <button class="p-1.5 bg-slate-800/90 border border-slate-500 rounded-lg text-blue-400 hover:bg-blue-500 hover:text-white transition-all shadow-xl" title="Edit">
@@ -85,8 +85,11 @@
               </p>
             </div>
           </div> 
+        <!-- </First Card> -->
 
+        <!-- Second Card -->
            <div data-id="0" class="group relative border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px]">
+            
             <div class="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
             <button class="p-1.5 bg-slate-800/90 border border-slate-500 rounded-lg text-blue-400 hover:bg-blue-500 hover:text-white transition-all shadow-xl" title="Edit">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +122,8 @@
               </p>
             </div>
           </div>
-<!-- 
+        <!-- </Second Card> -->
+          <!-- 
           <div
             data-id class="group border-2 border-slate-500 rounded-2xl p-4 hover:bg-slate-700/30 transition-colors cursor-pointer flex gap-3 min-h-[120px] opacity-70"
           >
@@ -141,8 +145,9 @@
             </div>
           </div> -->
         </div>
-        <!-- </Card Group> -->
+      <!-- </Card Group> -->
 
+        
         <div
           class="absolute bottom-0 left-0 w-full pt-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent flex items-center justify-between px-8 pb-2"
         >
@@ -176,17 +181,19 @@
               <div class="card-title">Mod Form</div>
               <div class="card-body" id="card-items">
                 <!-- Input Name -->
-                <input id="name" name="modName" class="inputs name" type="text" placeholder="Name Mod" />
+                <input data-input id="name" name="modName" class="inputs name" type="text" placeholder="Name Mod" required/>
                 <!-- Input Link -->
-                <input id="link" name="modLink" class="inputs link" type="text" placeholder="Paste Mod Link" />
+                <input data-input id="link" name="modLink" class="inputs link" type="text" placeholder="Paste Mod Link" required/>
                 <!-- Input Author -->
-                <input id="auth" name="modAuth" class="inputs auth" type="text" placeholder="Mod Author" />
+                <input data-input id="auth" name="modAuth" class="inputs auth" type="text" placeholder="Mod Author" required/>
                 <!-- Input Description -->
                 <textarea
+                  data-input
                   class="info"
                   id="info"
                   name="modInfo"
                   placeholder="Some info about mod..."
+                  required
                 ></textarea>
               </div>
               <!-- Buttons -->

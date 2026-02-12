@@ -11,6 +11,34 @@ const nameInput = document.querySelector("#name");
 const linkInput = document.querySelector("#link");
 const authorInput = document.querySelector("#auth");
 const infoTextArea = document.querySelector("#info");
+const inputs = document.querySelectorAll("[data-input]");
+
+// for (let i = 0; i < inputs.length; i++) {
+//     const element = inputs[i];
+//     element.addEventListener('click', () => {
+//         // console.log('meeee!!!!');
+//     if (nameInput.trim() === "" || linkInput.trim() === "" || authorInput.trim() ==="" || infoTextArea.trim() === "" ) {
+//         alert('Заполните все поля, Шепард!');
+//         inputs.classList.add('border-color-red');
+//         return;
+//     } else {
+//         inputs.classList.remove('border-color-red');
+
+//     }
+    
+//     })
+    
+// }
+
+// inputs.addEventListener('click', () => {
+//     console.log("meeeee!!");
+// });
+
+
+// selectedMod.addEventListener('click', () => {
+//     console.log("click!!!");
+    
+// })
 
 
 
@@ -69,6 +97,7 @@ modForm.addEventListener("submit", (event) => {
 });
 
 
+
 /* 
     Создать глобальный массив: Тебе нужно место, где будут храниться все объекты модов, которые ты создаешь. Назовем его, например, allModsArray. 
 
@@ -80,3 +109,4 @@ modForm.addEventListener("submit", (event) => {
 
     Найти данные и отобразить: Зная id нажатой карточки, найди нужный объект в allModsArray и вставь его данные (имя, описание, ссылку) в правую секцию. 
 */
+
