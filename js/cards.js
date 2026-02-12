@@ -13,22 +13,7 @@ const authorInput = document.querySelector("#auth");
 const infoTextArea = document.querySelector("#info");
 const inputs = document.querySelectorAll("[data-input]");
 
-// for (let i = 0; i < inputs.length; i++) {
-//     const element = inputs[i];
-//     element.addEventListener('click', () => {
-//         // console.log('meeee!!!!');
-//     if (nameInput.trim() === "" || linkInput.trim() === "" || authorInput.trim() ==="" || infoTextArea.trim() === "" ) {
-//         alert('Заполните все поля, Шепард!');
-//         inputs.classList.add('border-color-red');
-//         return;
-//     } else {
-//         inputs.classList.remove('border-color-red');
 
-//     }
-    
-//     })
-    
-// }
 
 // inputs.addEventListener('click', () => {
 //     console.log("meeeee!!");
@@ -48,6 +33,11 @@ modForm.addEventListener("submit", (event) => {
 
   // console.log(nameInput.textContent);
   // console.log(nameInput.value);
+
+  if (nameInput.value.trim() === '' || linkInput.value.trim() === '' || authorInput.value.trim() === '' || infoTextArea.value.trim()) {
+    alert('You need to write something!')
+    return
+  }
 
   const name = nameInput.value;
   const link = linkInput.value;
@@ -94,9 +84,13 @@ modForm.addEventListener("submit", (event) => {
 //   const modal = document.querySelector('[data-modal]');
   modal.classList.add('hidden');
 //   console.log(mods.id);
+
+
+
 });
 
 
+    
 
 /* 
     Создать глобальный массив: Тебе нужно место, где будут храниться все объекты модов, которые ты создаешь. Назовем его, например, allModsArray. 
