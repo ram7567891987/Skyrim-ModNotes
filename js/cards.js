@@ -34,15 +34,16 @@ modForm.addEventListener("submit", (event) => {
   // console.log(nameInput.textContent);
   // console.log(nameInput.value);
 
-  if (nameInput.value.trim() === '' || linkInput.value.trim() === '' || authorInput.value.trim() === '' || infoTextArea.value.trim()) {
-    alert('You need to write something!')
-    return
-  }
-
+   
   const name = nameInput.value;
   const link = linkInput.value;
   const auth = authorInput.value;
   const info = infoTextArea.value;
+
+  if (name.trim() === '' || link.trim() === '' || auth.trim() === '' || info.trim() === '') {
+    alert('You need to write something!')
+    return;
+  }
 
   const mods = {
     id: allModsArray.length,
@@ -84,8 +85,6 @@ modForm.addEventListener("submit", (event) => {
 //   const modal = document.querySelector('[data-modal]');
   modal.classList.add('hidden');
 //   console.log(mods.id);
-
-
 
 });
 
