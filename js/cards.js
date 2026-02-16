@@ -1,4 +1,4 @@
-let allModsArray = [];
+let allModsArray = JSON.parse(localStorage.getItem('myMods')) || [];
 let editId = null;
 
 /* Finding Elements and Creating  Variable */
@@ -173,6 +173,8 @@ const mods = {
  authorInput.value = "";
  infoTextArea.value = "";
  
+ saveToLocalStorage()
+
  modal.classList.add("hidden");
 
 // console.log("id карточки", editId);
@@ -205,6 +207,8 @@ modList.addEventListener('click', (event) => {
 
     editId = cardId /* Короче, здесь мы хватаем editId и переписываем ему cardId чтобы он нашел карточку нужную */
 
+     saveToLocalStorage()
+
     modal.classList.remove('hidden')
 
   }
@@ -233,6 +237,9 @@ modList.addEventListener('click', (event) => {
 
     allModsArray.splice(deedId, 1)
 
+    saveToLocalStorage()
+
+
     console.log('Ты, индюк, удалил карточку: ', idDelete );
   }
 
@@ -240,11 +247,94 @@ modList.addEventListener('click', (event) => {
 
 })
 
-// Save in Local Storage
-// function saveToLocalStorage() {
-//   localStorage.setItem('myMods', JSON.stringify(myMods))
-// }
+// Save in Local Storage. Black Box
+function saveToLocalStorage() {
+  localStorage.setItem('myMods', JSON.stringify(allModsArray));
+}
 
+function renderAllMods() {
+  allModsArray.forEach(mods => {
+    
+    const modCardHTML = `
+
+  <div data-card
+      data-id=${mods.id}
+      class="group relative border-2 border-slate-500 rounded-2xl p-4 bg-slate-800/40 transition-colors flex gap-3 min-h-[120px]"
+  >
+      <div class="w-1/2 border-r-2 border-slate-600 pr-3 flex gap-3">
+      <div
+      class="flex-grow flex flex-col justify-center cursor-pointer overflow-hidden"
+      >
+        <div class="nameCard font-bold text-lg truncate text-white">${mods.modName}</div>
+        <div class="linkCard text-blue-400 text-xs truncate underline mt-1">
+          ${mods.modLink}
+        </div>
+    <div class="authCard text-slate-400 text-xs mt-2">Auth: ${mods.modAuth}</div>
+  </div>
+
+  <div data-action class="flex flex-col gap-2 justify-center">
+  <button
+      data-edit
+      class="p-2 bg-slate-700/60 border border-slate-500 rounded-lg text-blue-400 hover:bg-blue-500 hover:text-white hover:border-blue-400 active:scale-95 transition-all shadow-md"
+      title="Edit"
+  >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+        />
+  </svg>
+  </button>
+
+    <button
+      data-delete
+      class="p-2 bg-slate-700/60 border border-slate-500 rounded-lg text-red-400 hover:bg-red-500 hover:text-white hover:border-red-400 active:scale-95 transition-all shadow-md"
+      title="Delete"
+    >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+        />
+        </svg>
+    </button>
+    </div>
+    </div>
+
+  <div class="w-1/2 pl-1 cursor-pointer">
+  <div class="text-xs text-slate-500 uppercase font-semibold">
+      Description
+  </div>
+    <p class="infoCard text-xs text-slate-300 mt-1 leading-snug line-clamp-4">
+    ${mods.modInfo}
+  </p>
+  </div>
+   </div>
+  `;
+
+   modList.insertAdjacentHTML("beforeend", modCardHTML);
+
+
+  });
+}
+
+renderAllMods()
 // actionBtns.addEventListener('click', () => {
 //   console.log('meeee!');
 // })
