@@ -12,8 +12,8 @@ const nameInput = document.querySelector("#name");
 const linkInput = document.querySelector("#link");
 const authorInput = document.querySelector("#auth");
 const infoTextArea = document.querySelector("#info");
-const inputs = document.querySelectorAll("[data-input]");
 
+const inputs = document.querySelectorAll("[data-input]");
 const actionBtns = document.querySelector('[data-action]') /* На вопрос почему поставили именно общий селектор? А кто память экономит будет? */
 
 let cardToUpdate = null;
@@ -175,45 +175,75 @@ const mods = {
  
  modal.classList.add("hidden");
 
-console.log("Пытаемся найти карточку с ID:", editId);
-const cardToUpdate = modList.querySelector(`[data-id="${editId}"]`);
-console.log("Нашли элемент:", cardToUpdate);
+// console.log("id карточки", editId);
+// const cardToUpdate = modList.querySelector(`[data-id="${editId}"]`);
+// console.log(cardToUpdate);
 });
 
 
 
-// Buttons Section
+  // Edit Cards
 modList.addEventListener('click', (event) => {
   // console.log(event.target); /* This flag is for finding some element on my index.html */
-  console.log(event.target.closest('[data-edit]')); /* With that part of code u can find element with data-edit on ur console */
+  // console.log(event.target.closest('[data-edit]')); /* With that part of code u can find element with data-edit on ur console */
   // console.log(event.target.closest('[data-id]'));
-  
-  
   const btnEdit = event.target.closest('[data-edit]');
-  // Edit
+  
   if (btnEdit) { /* Короче, здесь делается проверка на то если нажал на кнопку появится следующее */
-
-      const card = event.target.closest('[data-id]')
-      const cardId = Number(card.dataset.id) /* Перевод id в Number */
-      console.log("Наша Id", cardId); /* Показ id */
+    const card = event.target.closest('[data-id]')
+    const cardId = Number(card.dataset.id) /* Перевод id в Number */
       
-      const findId = allModsArray.find(mod  => mod.id === cardId) /* Показ свойство объекта. Обзор: mod => mod.id создание переменной. Если в первой поставил что-то то после => точно такой же должен быть */
-      console.log('Выбран мод:', findId) /* Показ обхекта */
+      // console.log("Id", cardId); /* Показ id */
+    const findId = allModsArray.find(mod  => mod.id === cardId) /* Показ свойство объекта. Обзор: mod => mod.id создание переменной. Если в первой поставил что-то то после => точно такой же должен быть */
+      
+      // console.log('Мод:', findId) /* Показ обхекта */
 
-      nameInput.value = findId.modName;
-      linkInput.value = findId.modLink;
-      authorInput.value = findId.modAuth;
-      infoTextArea.value = findId.modInfo;
+    nameInput.value = findId.modName;
+    linkInput.value = findId.modLink;
+    authorInput.value = findId.modAuth;
+    infoTextArea.value = findId.modInfo;
 
-      editId = cardId /* Короче, здесь мы хватаем editId и переписываем ему cardId чтобы он нашел карточку нужную */
+    editId = cardId /* Короче, здесь мы хватаем editId и переписываем ему cardId чтобы он нашел карточку нужную */
 
-      modal.classList.remove('hidden')
+    modal.classList.remove('hidden')
 
-    }
+  }
 
 
     
 })
+// Delete Card
+modList.addEventListener('click', (event) => {
+  // console.log(event.target.closest('[data-delete]')); /* Проверка работы кнопки */
+
+  // if (event.target.dataset.delete !== 'delete') {
+  //   return;
+  // }
+
+  const btnDelete = event.target.closest('[data-id]')
+  const isDeleteBtn = event.target.closest('[data-delete]')
+
+  if (isDeleteBtn) {
+    const cardDelete = event.target.closest('[data-id]')
+    const idDelete = cardDelete.dataset.id;
+
+    cardDelete.remove()
+
+    let deedId = allModsArray.findIndex((d) => d.id === Number(idDelete)) 
+
+    allModsArray.splice(deedId, 1)
+
+    console.log('Ты, индюк, удалил карточку: ', idDelete );
+  }
+
+  
+
+})
+
+// Save in Local Storage
+// function saveToLocalStorage() {
+//   localStorage.setItem('myMods', JSON.stringify(myMods))
+// }
 
 // actionBtns.addEventListener('click', () => {
 //   console.log('meeee!');
