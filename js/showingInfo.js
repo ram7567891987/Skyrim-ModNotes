@@ -17,18 +17,42 @@ modList.addEventListener("click", (event) => {
         // card.classList.add("border-blue-500");
 
         const id = Number(card.dataset.id);
-        const selectedMod = allModsArray[id];
+        const selectedMod = allModsArray.find((element) => element.id === id)
 
-        fullName.textContent = selectedMod.modName;
-        fullName.textContent = selectedMod.modName;
+        updateShowingMod(selectedMod)
+        // const firstCard = modList.querySelector(".group")
+        // fullName.textContent = selectedMod.modName;
+        // fullInfo.textContent = selectedMod.modInfo;
+        // fullAuth.textContent = selectedMod.modAuth;
 
-        fullInfo.textContent = selectedMod.modInfo;
-        fullAuth.textContent = selectedMod.modAuth;
-
-        fullLink.href = selectedMod.modLink;
-        fullLink.textContent = "Open on Nexus";
+        // fullLink.href = selectedMod.modLink;
+        // fullLink.textContent = "Open on Nexus";
     }
 });
+
+function updateShowingMod(mod) {
+        fullName.textContent = mod.modName;
+        fullInfo.textContent = mod.modInfo;
+        fullAuth.textContent = mod.modAuth;
+
+        fullLink.href = mod.modLink;
+        fullLink.textContent = "Open on Nexus";
+}
+
+renderAllMods()
+
+if (allModsArray.length > 0) { /* Фикс проблемы с показом инфы о карточках в случае удаления или отсутствия */
+    updateShowingMod(allModsArray[0])
+} else {
+        fullName.textContent = ""
+        fullInfo.textContent = ""
+        fullAuth.textContent = ""
+
+        fullLink.href = ""
+        fullLink.textContent = "No Mods Available";
+}
+
+
 // selectedMod.addEventListener('click', () => {
 //     console.log("click!!!");
     

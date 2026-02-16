@@ -237,6 +237,17 @@ modList.addEventListener('click', (event) => {
 
     allModsArray.splice(deedId, 1)
 
+    if (allModsArray.length > 0) {
+      updateShowingMod(allModsArray[0])
+    } else {
+        fullName.textContent = ""
+        fullInfo.textContent = ""
+        fullAuth.textContent = ""
+
+        fullLink.href = ""
+        fullLink.textContent = "";
+}
+
     saveToLocalStorage()
 
 
@@ -334,7 +345,6 @@ function renderAllMods() {
   });
 }
 
-renderAllMods()
 // actionBtns.addEventListener('click', () => {
 //   console.log('meeee!');
 // })
